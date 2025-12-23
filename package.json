@@ -1,0 +1,13 @@
+{
+  "name": "rudulf-christmus-deer",
+  "version": "1.0.0",
+  "description": "$RUDULF - rudulf christmus deer memecoin",
+  "scripts": {
+    "dev": "npx serve public",
+    "build": "echo 'Static site - no build needed'",
+    "start": "npx serve public"
+  },
+  "keywords": ["memecoin", "solana", "rudolph", "christmas"],
+  "author": "RUDULF Team",
+  "license": "MIT"
+}

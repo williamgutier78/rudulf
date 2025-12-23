@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$RUDULF - rudulf christmus deer 🦌🎄</title>
+    <link rel="icon" type="image/jpeg" href="/logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --red: #ff0000;
+            --green: #00aa00;
+            --dark-green: #006600;
+            --brown: #8B4513;
+            --cream: #fff8dc;
+            --yellow: #ffd700;
+            --white: #ffffff;
+            --black: #000000;
+        }
+
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: var(--cream);
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='30' y='35' font-size='20' text-anchor='middle' fill='%23ccddcc' opacity='0.3'%3E❄%3C/text%3E%3C/svg%3E");
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Hand-drawn border effect */
+        .hand-drawn-border {
+            border: 4px solid var(--black);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            box-shadow: 4px 4px 0 var(--black);
+        }
+
+        .hand-drawn-border-red {
+            border: 4px solid var(--red);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            box-shadow: 4px 4px 0 var(--red);
+        }
+
+        .hand-drawn-border-green {
+            border: 4px solid var(--green);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            box-shadow: 4px 4px 0 var(--green);
+        }
+
+        /* Wobbly animation */
+        @keyframes wobble {
+            0%, 100% { transform: rotate(-1deg); }
+            50% { transform: rotate(1deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0.7; }
+        }
+
+        @keyframes rainbow {
+            0% { color: var(--red); }
+            33% { color: var(--green); }
+            66% { color: var(--yellow); }
+            100% { color: var(--red); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px) rotate(-2deg); }
+            75% { transform: translateX(5px) rotate(2deg); }
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(180deg, var(--red) 0%, #cc0000 100%);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 5px solid var(--black);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            animation: wobble 2s infinite;
+        }
+
+        .logo-text {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 2rem;
+            color: var(--white);
+            text-shadow: 3px 3px 0 var(--black), -1px -1px 0 var(--black);
+        }
+
+        .x-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            color: var(--black);
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+            border: 3px solid var(--black);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+
+        .x-link:hover {
+            background: var(--black);
+            color: var(--white);
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '🎄 🦌 🎁 ❄️ 🎄 🦌 🎁 ❄️ 🎄 🦌 🎁 ❄️';
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            font-size: 2rem;
+            animation: float 3s infinite;
+        }
+
+        .hero-title {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 4rem;
+            color: var(--red);
+            text-shadow: 
+                4px 4px 0 var(--green),
+                8px 8px 0 var(--black);
+            margin-bottom: 20px;
+            animation: wobble 3s infinite;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: var(--dark-green);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .ticker {
+            display: inline-block;
+            background: var(--green);
+            color: var(--white);
+            padding: 15px 40px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+            animation: shake 0.5s infinite;
+            border: 4px solid var(--black);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+
+        .hero-img {
+            max-width: 350px;
+            margin: 30px auto;
+            display: block;
+            animation: float 4s infinite;
+            border: 5px solid var(--black);
+            border-radius: 20px;
+            background: var(--white);
+            padding: 10px;
+        }
+
+        /* Airdrop Section */
+        .airdrop-section {
+            background: linear-gradient(135deg, var(--green) 0%, var(--dark-green) 100%);
+            padding: 50px 20px;
+            margin: 40px 20px;
+            text-align: center;
+            border: 6px solid var(--black);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            position: relative;
+        }
+
+        .airdrop-section::before {
+            content: '🎁';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 4rem;
+            animation: float 2s infinite;
+        }
+
+        .airdrop-title {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 2.5rem;
+            color: var(--white);
+            text-shadow: 3px 3px 0 var(--black);
+            margin-bottom: 20px;
+        }
+
+        .airdrop-info {
+            font-size: 1.3rem;
+            color: var(--cream);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .timer-box {
+            background: var(--white);
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 500px;
+            border: 5px solid var(--red);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+
+        .timer-label {
+            font-size: 1.2rem;
+            color: var(--dark-green);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .timer {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 4rem;
+            color: var(--red);
+            animation: blink 1s infinite;
+        }
+
+        .timer-sub {
+            font-size: 1rem;
+            color: var(--black);
+            margin-top: 15px;
+        }
+
+        .holders-info {
+            background: var(--yellow);
+            color: var(--black);
+            padding: 15px 30px;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border: 3px solid var(--black);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            animation: wobble 2s infinite;
+        }
+
+        /* Distribution Section */
+        .distribution-section {
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 2.5rem;
+            color: var(--red);
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 3px 3px 0 var(--green);
+        }
+
+        .distribution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .dist-card {
+            background: var(--white);
+            padding: 25px;
+            text-align: center;
+            border: 4px solid var(--black);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            transition: transform 0.3s;
+        }
+
+        .dist-card:hover {
+            transform: rotate(2deg) scale(1.05);
+        }
+
+        .dist-card h3 {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 2rem;
+            color: var(--green);
+            margin-bottom: 10px;
+        }
+
+        .dist-card p {
+            font-size: 1.1rem;
+            color: var(--black);
+            font-weight: 700;
+        }
+
+        /* Meme Gallery */
+        .meme-section {
+            background: var(--red);
+            padding: 50px 20px;
+            border-top: 6px solid var(--black);
+            border-bottom: 6px solid var(--black);
+        }
+
+        .meme-section .section-title {
+            color: var(--white);
+            text-shadow: 3px 3px 0 var(--black);
+        }
+
+        .meme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .meme-card {
+            background: var(--white);
+            padding: 15px;
+            border: 5px solid var(--black);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .meme-card:hover {
+            transform: rotate(-2deg) scale(1.03);
+        }
+
+        .meme-card img {
+            width: 100%;
+            border-radius: 10px;
+            border: 3px solid var(--black);
+        }
+
+        .meme-caption {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 1.3rem;
+            color: var(--black);
+            margin-top: 15px;
+            padding: 10px;
+            background: var(--yellow);
+            border: 3px solid var(--black);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+
+        /* Info Banner */
+        .info-banner {
+            background: var(--green);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .info-banner p {
+            font-size: 1.5rem;
+            color: var(--white);
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+        }
+
+        .ca-box {
+            background: var(--white);
+            padding: 20px 30px;
+            display: inline-block;
+            margin-top: 20px;
+            border: 4px solid var(--black);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+
+        /* Scrolling Text */
+        .scroll-banner {
+            background: var(--black);
+            color: var(--white);
+            padding: 15px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .scroll-text {
+            display: inline-block;
+            animation: scroll 20s linear infinite;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Why Section */
+        .why-section {
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .why-card {
+            background: var(--white);
+            padding: 30px;
+            border: 4px solid var(--green);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+
+        .why-card h3 {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 1.5rem;
+            color: var(--red);
+            margin-bottom: 15px;
+        }
+
+        .why-card p {
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-green);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 6px solid var(--black);
+        }
+
+        .footer-logo {
+            width: 100px;
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            margin-bottom: 20px;
+            animation: wobble 3s infinite;
+        }
+
+        .footer p {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: var(--yellow);
+            text-decoration: none;
+            font-weight: 700;
+            margin: 0 15px;
+            font-size: 1.1rem;
+        }
+
+        .disclaimer {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: var(--cream);
+        }
+
+        /* Live indicator */
+        .live-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--black);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--red);
+            border-radius: 50%;
+            animation: blink 1s infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            .timer {
+                font-size: 2.5rem;
+            }
+            .airdrop-title {
+                font-size: 1.8rem;
+            }
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Christmas lights effect at top */
+        .lights {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 10px;
+            background: var(--black);
+        }
+
+        .light {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            animation: blink 0.5s infinite;
+        }
+
+        .light:nth-child(odd) {
+            background: var(--red);
+            animation-delay: 0.25s;
+        }
+
+        .light:nth-child(even) {
+            background: var(--green);
+        }
+    </style>
+</head>
+<body>
+    <!-- Christmas Lights -->
+    <div class="lights">
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-section">
+            <img src="/logo.jpg" alt="RUDULF" class="logo-img">
+            <span class="logo-text">$RUDULF</span>
+        </div>
+        <a href="https://x.com" target="_blank" class="x-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            Follow on X
+        </a>
+    </header>
+
+    <!-- Scrolling Banner -->
+    <div class="scroll-banner">
+        <span class="scroll-text">
+            🦌 $RUDULF TO THE MOON 🌙 • MERRY CHRISTMUS DEGENS 🎄 • HOLD 100K FOR AIRDROPS 🎁 • SANTA'S FAVORITE MEMECOIN 🎅 • NO RUGS ONLY GIFTS 🎁 • $RUDULF TO THE MOON 🌙 • MERRY CHRISTMUS DEGENS 🎄 • HOLD 100K FOR AIRDROPS 🎁 •
+        </span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">🦌 RUDULF CHRISTMUS DEER 🎄</h1>
+        <p class="hero-subtitle">the most BASED reindeer on solana</p>
+        <div class="ticker">$RUDULF</div>
+        <img src="/meme1.png" alt="RUDULF with gift" class="hero-img">
+        <p style="font-size: 1.5rem; color: var(--dark-green); margin-top: 20px; font-weight: 700;">
+            🎁 Rudulf got ur presents fren 🎁
+        </p>
+    </section>
+
+    <!-- Airdrop Section -->
+    <section class="airdrop-section">
+        <h2 class="airdrop-title">🎁 HOLDER AIRDROP ACTIVE 🎁</h2>
+        <p class="airdrop-info">
+            Rudulf rewards his frens! Every 10 minutes, random airdrops<br>
+            are sent to holders with 100,000+ $RUDULF tokens!<br>
+            <strong>HODLing = Free gifts from Rudulf himself!</strong>
+        </p>
+        
+        <div class="timer-box">
+            <p class="timer-label">⏰ NEXT AIRDROP IN ⏰</p>
+            <div class="timer" id="countdown">09:47</div>
+            <p class="timer-sub">Distribution runs automatically every 10 minutes</p>
+            <div class="live-indicator">
+                <div class="live-dot"></div>
+                LIVE
+            </div>
+        </div>
+        
+        <div class="holders-info">
+            📊 Minimum to qualify: 100,000 $RUDULF
+        </div>
+    </section>
+
+    <!-- Distribution Info -->
+    <section class="distribution-section">
+        <h2 class="section-title">📊 TOKENOMICS 📊</h2>
+        <div class="distribution-grid">
+            <div class="dist-card">
+                <h3>69%</h3>
+                <p>🎄 LIQUIDITY</p>
+                <small>(locked & loaded)</small>
+            </div>
+            <div class="dist-card">
+                <h3>20%</h3>
+                <p>🎁 AIRDROPS</p>
+                <small>(for da holders)</small>
+            </div>
+            <div class="dist-card">
+                <h3>6.9%</h3>
+                <p>🦌 TEAM</p>
+                <small>(rudulf's elves)</small>
+            </div>
+            <div class="dist-card">
+                <h3>4.1%</h3>
+                <p>🎅 MARKETING</p>
+                <small>(spreadin cheer)</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Banner -->
+    <div class="info-banner">
+        <p>
+            🔥 <strong>RUDULF</strong> is the community-driven memecoin that keeps giving! 
+            No VC funding, no pre-sale rugs, just pure Christmas spirit and degen energy! 🔥
+        </p>
+        <div class="ca-box">
+            <strong>CA:</strong> RUDULF...COMING SOON...CHECK X FOR UPDATES 🦌
+        </div>
+    </div>
+
+    <!-- Meme Gallery -->
+    <section class="meme-section">
+        <h2 class="section-title">🖼️ RUDULF GALLERY 🖼️</h2>
+        <div class="meme-grid">
+            <div class="meme-card">
+                <img src="/meme2.png" alt="Rudulf chillin">
+                <p class="meme-caption">rudulf chillin wit da elves 😎</p>
+            </div>
+            <div class="meme-card">
+                <img src="/meme3.png" alt="The whole squad">
+                <p class="meme-caption">squad goals fr fr 🦌🦌🦌</p>
+            </div>
+            <div class="meme-card">
+                <img src="/meme4.png" alt="Art time">
+                <p class="meme-caption">rudulf makin charts 📈</p>
+            </div>
+            <div class="meme-card">
+                <img src="/meme5.png" alt="Gift time">
+                <p class="meme-caption">airdrops inbound 🎁🎁</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why-section">
+        <h2 class="section-title">🎄 WHY $RUDULF? 🎄</h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <h3>🔴 RED NOSE</h3>
+                <p>Rudulf's nose glows brighter than your portfolio losses. He guides degens through the darkest bear markets!</p>
+            </div>
+            <div class="why-card">
+                <h3>🎁 FREE GIFTS</h3>
+                <p>Automatic airdrops every 10 minutes to diamond hand holders. Santa who? Rudulf is the real gift giver!</p>
+            </div>
+            <div class="why-card">
+                <h3>🦌 BASED AF</h3>
+                <p>100% community driven. No rugs, no scams, just vibes and Christmas memes. Rudulf doesn't rug, he hugs.</p>
+            </div>
+            <div class="why-card">
+                <h3>🎄 FESTIVE SZN</h3>
+                <p>It's always Christmas when you're holding $RUDULF. Spread the holiday cheer and watch your bags grow!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Another scrolling banner -->
+    <div class="scroll-banner" style="background: var(--red);">
+        <span class="scroll-text">
+            🎄 BUY $RUDULF 🦌 HOLD $RUDULF 💎 AIRDROP $RUDULF 🎁 MEME $RUDULF 🖼️ LOVE $RUDULF ❤️ BUY $RUDULF 🦌 HOLD $RUDULF 💎 AIRDROP $RUDULF 🎁 MEME $RUDULF 🖼️ LOVE $RUDULF ❤️
+        </span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <img src="/logo.jpg" alt="RUDULF" class="footer-logo">
+        <p style="font-family: 'Permanent Marker', cursive; font-size: 2rem;">$RUDULF</p>
+        <p>rudulf christmus deer 🦌🎄</p>
+        
+        <div class="footer-links">
+            <a href="https://x.com" target="_blank">Twitter/X</a>
+            <a href="#" target="_blank">Telegram</a>
+            <a href="#" target="_blank">DEXScreener</a>
+        </div>
+        
+        <div class="disclaimer">
+            <p>⚠️ DISCLAIMER: $RUDULF is a memecoin created for entertainment purposes. Cryptocurrency investments are highly volatile and risky. Do your own research (DYOR) and never invest more than you can afford to lose. This is not financial advice. Rudulf loves you but can't guarantee gainz. 🦌❤️</p>
+        </div>
+        
+        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">
+            © 2024 $RUDULF - Made with ❤️ by degens, for degens
+        </p>
+    </footer>
+
+    <script>
+        // Fake countdown timer that resets every 10 minutes
+        function updateTimer() {
+            const now = new Date();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            
+            // Calculate time until next 10-minute mark
+            const minutesLeft = 9 - (minutes % 10);
+            const secondsLeft = 59 - seconds;
+            
+            const display = String(minutesLeft).padStart(2, '0') + ':' + String(secondsLeft).padStart(2, '0');
+            document.getElementById('countdown').textContent = display;
+        }
+
+        // Update every second
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // Add some random wobble to meme cards on scroll
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.meme-card');
+            cards.forEach((card, i) => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const rotation = Math.sin(Date.now() / 1000 + i) * 2;
+                    card.style.transform = `rotate(${rotation}deg)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
